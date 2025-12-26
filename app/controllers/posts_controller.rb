@@ -9,7 +9,10 @@ class PostsController < ApplicationController
     redirect_to'/top'
   end
 
-  private
+  def index
+    @posts = Post.all
+  end
+    private
   def post_params
     params.require(:post).permit(:location, :text)
   end

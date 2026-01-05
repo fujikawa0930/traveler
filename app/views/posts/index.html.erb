@@ -12,9 +12,11 @@
               <%= image_tag post.image, class: "post-thumb" %>
             <% end %>
             <p class="caption"><%= post.location %></p>
+            <p class="caption"><%= "#{post.comments.count} コメント" %></p>
           <% end %>
         </div>
       <% end %>
+      <%= paginate @posts %>
     </div>
   </div>
 </div>

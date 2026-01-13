@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     redirect_to post_path(post)
     else
       @post = Post.find(params[:post_id])
-      @comments = @post.comments.page(params{:page]).per(7).reverse_order
+      @comments = @post.comments.page(params[:page]).per(7).reverse_order
       render 'posts/show', status: :unprocessable_entity
     end
   end
